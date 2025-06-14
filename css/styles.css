@@ -38,30 +38,61 @@
 }
 
 /* Base */
+* {
+    box-sizing: border-box;     
+}
 body {
     color: var(--color-primary-dark);
     font-family: 'Popping', sans-serif;
     font-size: 18px;
     font-weight: 400;
     line-height: 1.5;
+    margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+    margin-top: 0;
+}
+
+address {
+    font-style: normal;
 }
 
 ul {
+    margin: 0;
+    padding: 0;
     list-style-type: none;
+}
+
+.visually-hidden {
+    position: absolute;
+    left: -10000px;
+    top: auto;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.section {
+    padding: 48px 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 1288px;
+    margin: 0 auto;
+    padding: 0 24px;
 }
 
 /* Button */
 .button {
+    padding: 16px 32px;
     color: var(--color-primary-light);
     background-color: var(--color-brand-light);
     border: 2px solid var(--color-brand-light);
     border-radius: 8px;
     cursor: pointer;
     font-weight: 600;
-}
-
-address {
-    font-style: normal;
 }
 
 .button:hover {
@@ -77,11 +108,37 @@ address {
 
 .link:hover {
     color: var(--color-brand-light);
-    font-weight: 600;
+    /* font-weight: 600; */
+}
+
+/* Header section */
+.header-container {
+    display: flex;
+    align-items: center; /*Вирівнюємо елементи в середині контейнеру по центру*/
+    gap: 40px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center; /*Вирівнюємо елементи в середині контейнеру по центру*/
+    flex-grow: 1;
+    gap: 40px;
+}
+
+.header-menu {
+    display: flex;
+    gap: 64px;          /*Gap - додає відстань між компонентами*/
+    flex-grow: 1;
+    justify-content: center;
 }
 
 /* Hero section */
+.hero-section {
+    padding: 272px 0px;
+}
+
 .hero-title {
+    margin-bottom: 0;
     color: var(--color-primary-light);
     text-align: center;
     font-size: 128px;
@@ -93,9 +150,20 @@ address {
 }
 
 /* Advantages section */
+.advantages-section{
+    padding: 16px 0;
+    background-color: var(--color-brand-light);
+}
 .advantages-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.advantages-item {
     color: var(--color-primary-light);
-    background-color: var(--color-brand);
+    font-size: 20px;
+    font-weight: 300;
 }
 
 .section-title {
@@ -108,12 +176,25 @@ address {
     color: var(--color-primary-dark);
 }
 
-.advantages-item {
-    font-size: 20px;
-    font-weight: 300;
+/* Traditions section */
+.traditions-section {
+    padding-top: 96px;
 }
 
-/* Traditions section */
+.traditions-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.traditions-contant {
+    max-width: 710px;
+}
+
+.traditions-title {
+    margin-bottom: 42px;
+}
+
 .traditions-text .brand {
     color: var(--color-brand-light);
     font-weight: 600;
@@ -123,23 +204,56 @@ address {
     text-transform: uppercase;
 }
 
+/* Вказуємо що потрібно примінити ці властивості тільки для другого елементу */
+.traditions-text.limited {
+    max-width: 340px;
+}
+
 /* Chefs section */
+.chefs-title {
+    margin-bottom: 80px;
+}
+
 .chef-title {
+    margin-bottom: 16px;
     font-size: 40px;
     font-weight: 600;
 }
 
 /* Formats section */
+.formats-title {
+    margin-bottom: 80px;
+}
+
+.formats-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.formats-item {
+    flex-basis: calc((100% - 40px) / 3);
+}
+
 .format-title {
     font-size: 24px;
     font-weight: 600;
+}
+
+.format-card {
+    padding: 24px;
+    border: 1px solid lightgray;
+    border-radius: 16px;
 }
 
 .format-text {
     font-size: 14px;
     font-weight: 300;
 }
-
+/* Contacts section */
+.contact-title {
+    margin-bottom: 16px;
+}
 /* Footer */
 .address-link {
     color: var(--color-primary-light);
